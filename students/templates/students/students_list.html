@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+  <head>
+    <meta charset="UTF-8"/>
+     <title>������ ������ ���������</title>
+    <meta name="description"
+           value="������� ������ ��������� ����������� �������" />
+
+     <!-- Include Styles -->
+     <link rel="stylesheet"
+           href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
+		    <link rel="stylesheet" href="./css/main.css">
+
+  </head>
+  <body>
+
+     <!-- Start Container -->
+     <div class="container">
+
+      <!-- Start Header -->
+      <div class="row" id="header">
+
+	  <!-- Logo -->
+        <div class="col-xs-8">
+           <h1>������ ������ ���������</h1>
+         </div>
+
+         <!-- Groups Selector -->
+         <div class="col-xs-4" id="group-selector">
+           <strong>�����:</strong>
+           <select>
+             <option value="">��� ��������</option>
+             <option value="">��� - 21, ������ ³����� (� 254)</option>
+             <option value="">��� - 22, ������ ������ (� 2123)</option>
+           </select>
+         </div>
+       </div>
+       <!-- End Header -->
+
+
+
+    <!-- Start subheader -->
+     <div class="row" id="sub-header">
+      <div class="col-xs-12">
+         <ul class="nav nav-tabs" role="tablist">
+           <li role="presentation" class="active"><a href="{% url "home" %}">Студенти</a></li>
+           <li role="presentation"><a href="/journal">Відвідування
+               </a></li>
+           <li role="presentation"><a href="{% url "groups" %}">Групи
+               </a></li>
+         </ul>
+       </div>
+     </div>
+     <!-- End subheader -->
+
+ <!-- Оновлена кнопка Додати Студента -->
+         <h2>База Студентів</h2>
+
+         <a href="{% url "students_add" %}" class="btn btn-primary">
+            Додати Студента</a>
+
+ <!-- Оновлений перший рядок таблиці із студентом -->
+ <table class="table table-hover table-striped">
+            <thead>
+               <tr>
+             <tr>
+              <td>1</td>
+               <td><img class="img-circle" src="./img/podoba3.jpg"
+                   height="30" width="30" /></td>
+               <td><a href="{% url "students_edit" 1 %}">Корост</td>
+               <td><a href="{% url "students_edit" 1 %}">Андрій</td>
+              <td>2123</td>
+               <td>
+                 <div class="btn-group">
+                  <button type="button" class="btn btn-default
+                       dropdown-toggle" data-toggle="dropdown">Дія
+                     <span class="caret"></span>
+                   </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="{% url "students_edit" 1 %}">
+                        Редагувати</a></li>
+                     <li><a href="/journal/1">Відвідування</a></li>
+                    <li><a href="{% url "students_delete" 1 %}">  Видалити</a></li>
+                  </ul>
+                 </div>
+               </td>
+             </tr>
+             </tbody>
+           </table>
+		   <nav>
+         <ul class="pagination">
+           <li><a href="#">&laquo;</a></li>
+           <li><a href="#">1</a></li>
+           <li class="active"><a href="#">2</a></li>
+           <li><a href="#">3</a></li>
+           <li><a href="#">4</a></li>
+           <li><a href="#">5</a></li>
+           <li><a href="#">&raquo;</a></li>
+         </ul>
+       </nav>
+           <!-- End Students Listing -->
+
+		   </div>
+
+        </div>
+
+       </div>
+      <!-- End Main Page Content -->
+
+
+       <!-- Start Footer -->
+       <div class="row" id="footer">
+         <div class="col-xs-12">
+           &copy; 2014 ������ ������ ���������
+         </div>
+       </div>
+       <!-- End Footer -->
+
+     </div>
+     <!-- End Container -->
+
+
+     <!-- Javascripts Section -->
+     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+
+     <script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+   </body>
+
+</html>
