@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from ..models import Group
 
 def groups_list(request):
      return HttpResponse('<h1>Groups Listing</h1>')
