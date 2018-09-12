@@ -2,6 +2,9 @@ from django.contrib import admin
 from django.urls import path
 from students.views import Students,Groups
 
+
+
+
 urlpatterns = [
     path('',Students.students_list,name='home'),
     path('students/add/', Students.students_add,name='students_add'),
