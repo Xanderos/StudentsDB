@@ -1,11 +1,23 @@
 from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseRedirect
-from ..models.students import Student
-from ..models.groups import Group
+from ..models.Students import Student
+from ..models.Groups import Group
 from django.core.paginator import Paginator, EmptyPage,PageNotAnInteger
 from datetime import datetime
 from django.urls import reverse
-from django import forms
+from django.views.generic import ListView
+from django.views.generic import UpdateView
+from django.views.generic import DeleteView
+from django.forms import ModelForm
+
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Submit
+from crispy_forms.bootstrap import FormActions
+
+
+
+
+
 
 def students_list(request):
      students = Student.objects.all()
@@ -61,7 +73,7 @@ def students_add(request):
                      datetime.strptime(birthday, '%Y-%m-%d')
                  except Exception:
                      errors['birthday'] = \
-                         u"Введіть коректний формат дати (напр. 1984-12-30)"
+                     u"Введіть коректний формат дати (напр. 1984-12-30)"
                  else:
                      data['birthday'] = birthday
 
@@ -110,12 +122,28 @@ def students_add(request):
         return render(request, 'students/students_add.html',
          {'groups': Group.objects.all().order_by('title')})
 
-def students_edit(request, sid):
-     return HttpResponse('<h1>Edit Student %s</h1>' % sid)
 
-def students_delete(request, sid):
-     return HttpResponse('<h1>Delete Student %s</h1>' % sid)
 
+class StudentUpdateView(UpdateView):
+      model = Student
+      fields = '__all__'
+      template_name = 'students/students_edit.html'
+      def get_success_url(self):
+         return u'%s?status_message=Студента успішно збережено!' % reverse('home')
+
+      def post(self, request, *args, **kwargs):
+          if request.POST.get('cancel_button'):
+              return HttpResponseRedirect(
+                 u'%s?status_message=Редагування студента відмінено!'% reverse('home'))
+          else:
+              return super(StudentUpdateView, self).post(request, *args, **kwargs)
+
+class StudentDeleteView(DeleteView):
+    model = Student
+    template_name = 'students/students_confirm_delete.html'
+
+    def get_success_url(self):
+        return u'%s?status_message=Студента успішно видалено!' % reverse('home')
 
 
 # Create your views here.
