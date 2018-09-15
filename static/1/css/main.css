@@ -37,3 +37,10 @@ h1, h2, h3, h4, h5, h6 {
  input {
    max-width: 300px;
  }
+
+ /* Journal Table Styles */
+ td.day-box,th.day-header {
+   padding: 4px !important;
+   vertical-align: middle !important;
+   text-align: center;
+ }

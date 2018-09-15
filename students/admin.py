@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models.Students import Student
 from .models.Groups import Group
+from .models.Monthjournal import MonthJournal
 from django.urls import reverse
 from django.forms import ModelForm, ValidationError
 
@@ -34,3 +35,4 @@ class StudentAdmin(admin.ModelAdmin):
 
 admin.site.register(Student, StudentAdmin)
 admin.site.register(Group)
+admin.site.register(MonthJournal)
