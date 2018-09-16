@@ -12,7 +12,7 @@ urlpatterns = [
     path('students/<int:pk>/delete/',Students.StudentDeleteView.as_view(),name='students_delete'),
 
     path('journal/',Journal.JournalView.as_view(), name='journal'),
-    path('journal/<int:pk>?/?', Journal.JournalView.as_view(), name='journal'),
+    path('journal/<int:pk>/', Journal.JournalView.as_view(), name='journal'),
 
     path('groups/', Groups.groups_list, name='groups'),
     path('groups/add/',Groups.groups_add,name='groups_add'),

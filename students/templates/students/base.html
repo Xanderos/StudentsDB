@@ -8,6 +8,7 @@
 	<meta name="description" value="Система Обліку Студентів Навчального Закладу" >
   <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.0.0/css/bootstrap-datetimepicker.min.css">
   <link rel="stylesheet" href="{% static "css/main.css" %}">
   {% block extra_css %}{% endblock extra_css %}
    </head>
@@ -27,12 +28,13 @@
 
         <!-- Groups Selector -->
         <div class="col-xs-4" id="group-selector">
-           <strong>Група:</strong>
-           <select>
-             <option value="">Усі Студенти</option>
-             <option value="">MtM- 21, Podoba Vet (N 254)</option>
-             <option value="">MtM - 22, Corost Andrew (N 2123)</option>
-           </select>
+          <strong>Група:</strong>
+          <select>
+            <option value="">Усі cСтуденти</option>
+            {% for group in GROUPS %}
+            <option value="{{ group.id }}"{% if group.selected %}selected="1"{% endif %}>{{ group.title }}{% if group.leader %}, {{ group.leader }}{% endif %}</option>
+            {% endfor %}
+          </select>
          </div>
         </div>
 
@@ -78,9 +80,30 @@
        <!-- End Footer -->
 	</div>
      <!-- End Container -->
-
+     <!-- Modal Boilerplate -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"
+                   aria-label="Close">
+             <span aria-hidden="true">&times;</span></button>
+           <h4 class="modal-title" id="myModalLabel"><!-- --></h4>
+         </div>
+         <div class="modal-body"><!-- --></div>
+         <div class="modal-footer"><!-- --></div>
+       </div>
+     </div>
+   </div>
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
-		<script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.0.0/js/bootstrap-datetimepicker.min.js"></script>
+   <script src="{% static "js/main.js" %}"></script>
+
+    <script src="{% static "js/jquery.cookie.js" %}"></script>
     <script src="{% static "js/main.js" %}"></script>
     {% block extra_js %}{% endblock extra_js %}
    </body>
