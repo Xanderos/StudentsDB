@@ -9,6 +9,8 @@ from crispy_forms.layout import Submit
 
 from studentsdb.settings import ADMIN_EMAIL
 
+import logging
+
 class ContactForm(forms.Form):
 
     def __init__(self, *args, **kwargs):
