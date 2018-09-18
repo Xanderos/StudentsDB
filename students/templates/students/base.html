@@ -1,11 +1,12 @@
+{% load i18n %}
 {% load static from staticfiles %}
 <!DOCTYPE html>
  <html lang="uk">
    <head>
 
 	<meta charset="UTF-8">
-  <title>Сервіс Обліку Студентів - {% block meta_title %}{% endblock meta_title %}</title>
-	<meta name="description" value="Система Обліку Студентів Навчального Закладу" >
+  <title>{% trans "Students Accounting Service" %} - {% block meta_title %}{% endblock meta_title %}</title>
+	<meta name="description" value="{% trans "App to manage students database" %}" >
   <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.0.0/css/bootstrap-datetimepicker.min.css">
@@ -18,7 +19,7 @@
 		<!-- Start Container -->
 
   <div class="container">
-		<h1>Сервіс Обліку Студентів</h1>
+		<h1>{% trans "Students Accounting Service" %}</h1>
 
        <!-- Start Header -->
        <div class="row" id="header">
@@ -28,9 +29,9 @@
 
         <!-- Groups Selector -->
         <div class="col-xs-4" id="group-selector">
-          <strong>Група:</strong>
+          <strong>{% trans "Group:" %}</strong>
           <select>
-            <option value="">Усі cСтуденти</option>
+            <option value="">{% trans "All Students" %}</option>
             {% for group in GROUPS %}
             <option value="{{ group.id }}"{% if group.selected %}selected="1"{% endif %}>{{ group.title }}{% if group.leader %}, {{ group.leader }}{% endif %}</option>
             {% endfor %}
@@ -43,10 +44,10 @@
       <div class="row" id="sub-header">
          <div class="col-xs-12">
            <ul class="nav nav-tabs" role="tablist">
-             <li role="presentation" {% if request.path == '/' %}class="active"{% endif %}><a href="{% url "home" %}">Студенти</a></li>
-             <li role="presentation" {% if '/journal' in request.path %}class="active"{% endif %}><a href="/journal">Відвідування</a></li>
-             <li role="presentation" {% if '/groups' in request.path %}class="active"{% endif %}><a href="{% url "groups" %}">Групи</a></li>
-             <li role="presentation" {% if '/contact-admin' in request.path %}class="active"{% endif %}><a href="{% url "contact_admin" %}">Контакт</a></li>
+             <li role="presentation" {% if request.path == '/' %}class="active"{% endif %}><a href="{% url "home" %}">{% trans "Students" %}</a></li>
+             <li role="presentation" {% if '/journal' in request.path %}class="active"{% endif %}><a href="/journal">{% trans "Journal" %}</a></li>
+             <li role="presentation" {% if '/groups' in request.path %}class="active"{% endif %}><a href="{% url "groups" %}">{% trans "Groups" %}</a></li>
+             <li role="presentation" {% if '/contact-admin' in request.path %}class="active"{% endif %}><a href="{% url "contact_admin" %}">{% trans "Contact" %}</a></li>
           </ul>
         </div>
       </div>
@@ -74,7 +75,7 @@
        <!-- Start Footer -->
        <div class="row" id="footer">
          <div class="col-xs-12">
-           &copy; 2014 Service Audit of Students
+           &copy; 2014 {% trans "Students Accounting Service" %}
          </div>
        </div>
        <!-- End Footer -->

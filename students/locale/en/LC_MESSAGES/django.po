@@ -1,0 +1,94 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-18 10:46+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\students\templates\students\base.html:8
+#: .\students\templates\students\base.html:22
+#: .\students\templates\students\base.html:78
+msgid "Students Accounting Service"
+msgstr ""
+
+#: .\students\templates\students\base.html:9
+msgid "App to manage students database"
+msgstr ""
+
+#: .\students\templates\students\base.html:32
+msgid "Group:"
+msgstr ""
+
+#: .\students\templates\students\base.html:34
+msgid "All Students"
+msgstr ""
+
+#: .\students\templates\students\base.html:47
+#: .\students\templates\students\students_list.html:7
+msgid "Students"
+msgstr ""
+
+#: .\students\templates\students\base.html:48
+#: .\students\templates\students\students_list.html:70
+msgid "Journal"
+msgstr ""
+
+#: .\students\templates\students\base.html:49
+msgid "Groups"
+msgstr ""
+
+#: .\students\templates\students\base.html:50
+msgid "Contact"
+msgstr ""
+
+#: .\students\templates\students\students_list.html:9
+msgid "Students List"
+msgstr ""
+
+#: .\students\templates\students\students_list.html:13
+msgid "Add Student"
+msgstr ""
+
+#: .\students\templates\students\students_list.html:21
+msgid "Photo"
+msgstr ""
+
+#: .\students\templates\students\students_list.html:24
+msgid "Last Name"
+msgstr ""
+
+#: .\students\templates\students\students_list.html:32
+msgid "First Name"
+msgstr ""
+
+#: .\students\templates\students\students_list.html:39
+msgid "Ticket #"
+msgstr ""
+
+#: .\students\templates\students\students_list.html:44
+msgid "Actions"
+msgstr ""
+
+#: .\students\templates\students\students_list.html:65
+msgid "Action"
+msgstr ""
+
+#: .\students\templates\students\students_list.html:69
+msgid "Edit"
+msgstr ""
+
+#: .\students\templates\students\students_list.html:71
+msgid "Delete"
+msgstr ""
